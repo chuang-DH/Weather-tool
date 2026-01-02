@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day1 #weather app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="stars"></div>
+ <div class="container">
+    
+    <div class="search-box">
+        <i class="fa-solid fa-map-location"></i>
+    <input type="text" placeholder="Enter city name">
+    <button><i class ="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+   
+   <!-- <ul class="suggestions"></ul> -->
+    
+    <div class="Not-found">
+    <img src="img/404.png" alt="not found">
+    <p>City not found:D</p>
+    </div>
+
+
+<!---天氣顯示區-->
+  <div class="weather-box">
+  <img src="" >
+  <p class="temperature"></p>
+  <p class="description"></p><!--天氣描述-->
+  </div>
+
+
+
+
+<div class="weather-details">
+    
+    
+
+    <div class="humidity">
+        <i class="fa-solid fa-water"></i>
+        <div class="text">
+            <p>Humidity</p>
+            <span></span>
+            
+
+        </div>
+    </div>
+
+
+  <div class="wind">
+        <i class="fa-solid fa-wind"></i>
+        <div class="text">
+            <p>Wind Speed</p>
+            <span></span>
+        </div>
+        
+ </div>
+
+ <div class ="cloudiness">
+        <i class="fa-solid fa-cloud"></i>
+        <div class="text">
+            <p>Cloudiness</p>
+            <span></span>
+        </div>
+    </div>
+
+ <div class="pressure">
+        <i class="fa-solid fa-gauge-high"></i>
+        <div class="text">
+            <p>Pressure</p>
+            <span></span>
+            
+        </div>
+    </div>
+
+ </div>
+ <div class="">
+
+ </div>
+
+</div>
+
+<!---suggestion移出div-->
+<ul class="suggestions"></ul>
+
+<!--CDN可以用伺服器連動擷取資源-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <script> FontAwesome.config.familyPrefix = "fa";</script>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+
+    <script src= "index.js"></script>
+</body>
+</html>

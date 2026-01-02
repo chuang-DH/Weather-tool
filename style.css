@@ -1,0 +1,359 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none; 
+    box-sizing: border-box;
+}
+/**/
+body{
+
+    height: 100vh;/*50->100,視窗高度*/
+    display: flex;
+    flex-direction: column;/*子元素垂直排列*/   
+    justify-content: center;
+    align-items: center;    
+    background: linear-gradient(135deg,#0b0b2e,#000000);
+    
+}
+
+/**/
+.container{
+position : relative;
+    width: 400px;
+    height: 105px;
+    background-color: #f0f0f0;
+    border-radius: 18px;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /*超出容器的內容隱藏*/
+    font-family: "Roboto", sans-serif;/*告訴瀏覽器這個文字要用哪種字型。*/
+    transition: 0.6s ease-out; /*過渡效果*/
+
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.3);
+}
+
+
+.search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;/*抓container的寬度*/
+    height: min-content;
+    border-radius: 40px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 15px;/*上下0 左右15px*/
+}
+
+.search-box input{ /*抓search-box 中的input*/
+    color: black;
+    width: 70%;
+    height: 40px;
+    font-size: 24px;
+    background: transparent;
+    text-transform: uppercase;/*把裡面的元素變成大寫*/
+    padding-left: 20px;
+}
+
+.search-box input::placeholder{ /*設定placeholder的樣式*/
+    color: #668fa8;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize; /*把裡面的元素變成大寫*/
+}
+
+/*12_15 github check*/
+
+.search-box button{
+
+    color: #06283D;
+    font-size: 20px;
+    background: transparent;
+    cursor: pointer; /*游標變手指*/
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.search-box i {
+    pointer-events: none; /*讓圖示不會被點擊*/
+}
+
+
+
+.Not-found  {
+    width: 100%;   /* 設定寬度 */
+     height: auto; /* 高度自動，保持比例 */
+     margin-top: 30px; /* 頂部間距 */
+     margin-bottom: 10px; /* 底部間距 */
+    scale: 0; /* 縮放圖片大小 */
+    opacity: 0; /* 初始透明度 */
+    display: none;/*一開始不表示*/
+    
+}
+
+
+  
+.Not-found img {
+    width: 78%;   /* 設定寬度 */
+     height: auto; /* 高度自動，保持比例 */
+}
+
+.Not-found p {
+    font-size: 22px;
+    font-weight:500 ;
+    color: #180101;
+    margin-top: 12px;
+}
+
+.weather-box{
+    width: 400px;   /* 設定寬度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   
+}
+
+.weather-box .temperature{
+    font-size: 64px;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0;
+    position: relative;
+}
+.weather-box .temperature span{
+    font-size: 24px;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+}
+
+
+
+.weather-box .description{
+    font-size: 24px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.weather-box img{
+    width: 100px;
+    height: auto;/*保持比例*/
+}
+
+body.day-theme .weather-box .temperature,
+body.day-theme .weather-box .description{
+  color: #ffffff;
+}
+
+body.night-theme .weather-box .temperature,
+body.night-theme .weather-box .description{
+  color: #ffffff;
+}
+
+
+
+
+
+/*---------------------------------------------------------*/
+.weather-details{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.weather-details .humidity, .weather-details .wind{
+    /*display: flex;
+    align-items: center;*/
+    color: #010d14;
+    /*height: 100px*/
+}
+
+
+.weather-details .cloudiness .weather-details .pressure  {
+    font-size: 26px;
+    color: #010d14;
+    margin-right: 10px;
+   
+
+}
+
+.weather-details .humidity{
+    /* padding-left: 15px; */
+    display: flex;
+    justify-content: flex-start;/*主軸「靠前端」對齊*/
+     gap: 10px; /*主軸間距10px*/
+    
+    align-items: center;
+}
+
+.weather-details .wind{
+    padding-left: 15px;
+    display: flex;
+    justify-content: center;/*主軸「靠尾端」對齊*/
+    gap: 10px; /*主軸間距10px*/
+    align-items: center;
+   
+}
+
+/* 追加後的樣式 */
+
+.weather-details .cloudiness {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+    gap: 10px; /*主軸間距10px*/
+    align-items: center;
+}
+
+.weather-details .pressure {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    align-items: center;
+    gap: 10px; /*主軸間距10px*/
+    
+}
+
+.weather-details i{
+    font-size: 20px;
+    color: #01070a;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.weather-details span{
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.weather-details p{
+    font-size: 16px; /*字寫多大*/
+    font-weight: 500; /*字的粗細*/
+    color: #080000;
+    margin-top: 6px;
+}
+
+.weather-box .weather-details{
+   transform: scale(0); /* 縮放圖片大小 */
+    opacity: 0; /* 初始透明度 */
+}
+
+/*---------------------------------------------------------------------*/
+
+/*淡入動畫*/
+.fadeIn{
+    animation: fadeIn 0.5s forwards; /*動畫持續時間0.5秒，forwards保持最終狀態*/
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn{
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.suggestions{
+    list-style: none; /*移除項目符號*/
+    width: 100%;
+    max-height: 150px; /*最大高度*/
+    overflow-y: auto; /*垂直方向出現滾動條*/
+    margin-top: 10px;
+    border-radius: 8px;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+    background: #fff;
+    position: absolute;
+    top: 80px; /*調整位置以適應search-box*/
+    left: 0;
+    z-index: 9999; /*確保在其他元素之上*/  /*原本10*/
+   
+}
+
+.suggestions li{ /*每個建議項目*/
+    padding: 10px 15px;
+    cursor: pointer; /*游標變手指*/
+    border-bottom: 1px solid #eee;
+}
+
+.suggestions li:hover{ /*滑鼠懸停效果*/
+    background: #f0f0f0;
+}
+
+.suggestions li.active {
+    background-color: #e0e0e0;
+}
+
+
+
+/**********************根據時間置換背景************************/
+
+.morning-theme{
+    background: linear-gradient(135deg, #eca241, #D1913C)
+}
+
+.day-theme{
+    background: linear-gradient(135deg,#5b6cff,#00e4ff);
+  
+}
+
+.evening-theme{
+  background: linear-gradient(135deg,#ff7e5f,#feb47b);
+  
+}
+
+.night-theme{
+ background: linear-gradient(135deg,#0b0b2e,#000000);
+}
+
+ 
+
+/***********************************************************/
+/* 星空背景容器 */
+.stars{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* 不影響點擊 */
+}
+
+/* 單顆星星 */
+.star{
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: moveStar linear infinite;
+}
+
+/* 星星移動動畫 */
+@keyframes moveStar{
+  from{
+    transform: translateY(0px);
+  }
+  to{
+    transform: translateY(100vh);
+  }
+}
